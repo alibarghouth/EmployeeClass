@@ -14,9 +14,19 @@ namespace EmployeeClass.Services
 
         public async Task<IEnumerable<Employee>> GetAllEmployee(byte DepartmentId = 0)
         {
-            return await _dbContext.Employees
+            var a = await _dbContext.Employees
+                .Include(x => x.Department)
                 .Where(e => e.DepartmentId == DepartmentId || DepartmentId == 0) 
+                .Select(x =>new Employee
+                {
+                    Id = x.Id,
+                    Department= x.Department,
+                    
+                })
                 .ToListAsync();
+
+
+            return a;
         }
 
         public async Task<Employee> GetEmployeeById(int id)

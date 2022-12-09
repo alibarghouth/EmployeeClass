@@ -1,6 +1,8 @@
 using EmployeeClass.Model;
 using EmployeeClass.Services;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,7 +28,10 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddCors();
+
 builder.Services.AddAutoMapper(typeof(Program));
+
+
 
 var app = builder.Build();
 

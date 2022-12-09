@@ -12,6 +12,11 @@ namespace EmployeeClass.Model
 
         }
 
+        protected override void OnModelCreating(ModelBuilder model)
+        {
+
+        }
+
         public  DbSet<Employee> Employees { get; set; }
         public  DbSet<Department> Departments { get; set; }
     }
