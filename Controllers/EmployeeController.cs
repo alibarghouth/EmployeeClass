@@ -26,7 +26,6 @@ namespace EmployeeClass.Controllers
         private List<string> _alloExtensionsForvideo = new List<string>()
         {
             ".mp4",
-            ".ff"
         };
 
         private double _allowSizeForImg = 1048576;
